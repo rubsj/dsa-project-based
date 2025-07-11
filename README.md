@@ -37,6 +37,7 @@ project-based-dsa/
 ├── python/
 │   ├── arrays/
 │   │   ├── inventory_analyzer.py
+│   │   ├── core-concepts.md
 │   │   ├── dry_runs.md
 │   │   ├── leetcode_problems.md
 │   │   └── reflection.md
@@ -53,8 +54,8 @@ project-based-dsa/
 
 1. Clone the repo  
    ```bash
-   git clone https://github.com/<your-username>/project-based-dsa.git
-   cd project-based-dsa/python
+   git clone https://github.com/<your-username>/dsa-project-based.git
+   cd dsa-project-based/python
    ```
 
 2. Use Python 3.8+  
