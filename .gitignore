@@ -1,55 +1,68 @@
 # Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
+
+**pycache**/
+_.py[cod]
+_$py.class
 
 # C extensions
-*.so
+
+\*.so
 
 # Virtual environments
-.venv/
+
 env/
 venv/
 ENV/
+.venv/
 
 # Jupyter Notebook checkpoints
+
 .ipynb_checkpoints
 
 # VS Code settings
+
 .vscode/
 
 # PyCharm settings
+
 .idea/
 
 # macOS
+
 .DS_Store
 
 # Logs and temp files
-*.log
-*.tmp
-*.bak
+
+_.log
+_.tmp
+\*.bak
 
 # Node.js dependencies (if JS support added)
+
 node_modules/
 
 # Java build files (if Java support added)
-*.class
-*.jar
-*.war
-*.ear
+
+_.class
+_.jar
+_.war
+_.ear
 target/
 
 # Python packages
-*.egg-info/
+
+\*.egg-info/
 dist/
 build/
 
 # Test cache
+
 .pytest_cache/
 coverage.xml
 htmlcov/
 .cache/
 
 # Environment variables and secrets
+
 .env
-*.env
+\*.env
