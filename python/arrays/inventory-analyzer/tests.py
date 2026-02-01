@@ -5,7 +5,10 @@ from core import (
     out_of_stock_items,
     reorder_suggestions,
     second_highest_stock,
-    stock_summary
+    stock_summary,
+    aggregate_stock_by_product,
+    has_stock_spike_window,
+    longest_mountain_stock_run
 )
 
 class TestInventoryAnalyzer(unittest.TestCase):
@@ -37,6 +40,22 @@ class TestInventoryAnalyzer(unittest.TestCase):
         self.assertEqual(summary["total_products"], 3)
         self.assertEqual(summary["distinct_products"], 3)
         self.assertEqual(summary["average_stock"], 10.0)
+        
+
+    def test_aggregate_stock_by_product(self):
+        result = aggregate_stock_by_product([101, 102, 101], [5, 2, 7])
+        self.assertEqual(result, {101: 12, 102: 2})
+
+    def test_has_stock_spike_window(self):
+        self.assertTrue(has_stock_spike_window([1, 2, 10, 4], 3, 12))  # 2+10+4 = 16
+        self.assertFalse(has_stock_spike_window([1, 1, 1], 2, 5))
+        self.assertFalse(has_stock_spike_window([1, 2], 3, 5))  # less than window size
+
+    def test_longest_mountain_stock_run(self):
+        self.assertEqual(longest_mountain_stock_run([1, 2, 3, 2, 1]), 5)
+        self.assertEqual(longest_mountain_stock_run([2, 1, 4, 7, 3, 2, 5]), 5)
+        self.assertEqual(longest_mountain_stock_run([1, 2, 3]), 0)
+        self.assertEqual(longest_mountain_stock_run([3, 2, 1, 2, 3, 4, 3, 2, 1]), 7)
 
 if __name__ == '__main__':
     unittest.main()
